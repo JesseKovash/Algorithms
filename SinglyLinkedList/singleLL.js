@@ -45,4 +45,18 @@ class SinglyLinkedList {
     return current
   }
 
+  shift() {
+    if (!this.head) {
+      return undefined
+    }
+    const shiftVal = this.head;
+    this.head = shiftVal.next;
+    this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail =  null
+    }
+    return shiftVal
+  }
+
 }
