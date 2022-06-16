@@ -59,4 +59,30 @@ class SinglyLinkedList {
     return shiftVal
   }
 
+  unshift(val) {
+    const unshiftNode = new Node(val);
+    if (!this.head) {
+      this.head = unshiftNode;
+      this.tail = unshiftNode
+    } else {
+      unshiftNode.next = this.head;
+      this.head = unshiftNode;
+    }
+    this.length++;
+    return this
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return null
+    }
+    let currNode = this.head;
+    let nodeIndex = 0;
+    while (index !== nodeIndex) {
+      currNode = currNode.next;
+      nodeIndex++;
+    }
+    return currNode
+  }
+
 }
