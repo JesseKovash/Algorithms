@@ -92,4 +92,13 @@ class DoublyLinkedList() {
     return currNode
   }
 
+  set(index, value) {
+    const targetNode = this.get(index);
+    if (targetNode) {
+      targetNode.val = value;
+      return true
+    }
+    return false
+  }
+
 }
