@@ -43,9 +43,9 @@ class BinarySearchTree {
     if (!this.root) return false;
     let currNode = this.root;
     while (currNode) {
-      if (currNode.value === val) return currNode
+      if (currNode.value === val) return true
       currNode.value < val ? currNode = currNode.right : currNode = currNode.left;
     }
-    return undefined
+    return true
   }
 }
