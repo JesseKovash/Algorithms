@@ -39,7 +39,7 @@ class BinarySearchTree {
     return this
   }
 
-  find(val) {
+  contains(val) {
     if (!this.root) return false;
     let currNode = this.root;
     while (currNode) {
