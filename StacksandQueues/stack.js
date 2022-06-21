@@ -22,16 +22,19 @@ class Stack {
       newNode.next = this.first;
       this.first = newNode;
     }
-    this.size++;
+    return ++this.size
   }
 
   pop() {
     if (this.size === 0 ) return null
     let removed = this.first;
+    if (this.first === this.last) {
+      this.last = null;
+    }
     this.first = removed.next;
     removed.next = null;
     this.size--;
-    return removed
+    return removed.value
   }
 
   print() {
