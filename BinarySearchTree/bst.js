@@ -11,7 +11,7 @@ class BinarySearchTree {
     this.root = null;
   }
 
-insert(val) {
+  insert(val) {
     let newNode = new Node(val)
     if (!this.root) {
       this.root = newNode;
@@ -37,5 +37,15 @@ insert(val) {
       val < lastNode.value ? lastNode.left = newNode : lastNode.right = newNode;
     }
     return this
+  }
+
+  find(val) {
+    if (!this.root) return false;
+    let currNode = this.root;
+    while (currNode) {
+      if (currNode.value === val) return currNode
+      currNode.value < val ? currNode = currNode.right : currNode = currNode.left;
+    }
+    return undefined
   }
 }
