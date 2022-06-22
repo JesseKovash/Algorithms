@@ -1,4 +1,4 @@
-function dfSearch(root) {
+function dfPreOrderSearch(root) {
   let allNodes = [];
   if (!root) return [];
   allNodes.push(root.value)
