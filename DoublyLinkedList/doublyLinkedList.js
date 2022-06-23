@@ -76,14 +76,12 @@ class DoublyLinkedList() {
     const mid = Math.floor(this.length / 2);
     let currNode;
     if (index <= mid) {
-      console.log('less')
       currNode = this.head;
       for (var i=0; i < index; i++) {
         console.log(i)
           currNode = currNode.next
       }
     } else {
-      console.log('greater')
       currNode = this.tail;
       for (var i=this.length - 1; i > index; i--) {
           currNode = currNode.prev
@@ -157,6 +155,6 @@ class DoublyLinkedList() {
         index++;
     }
     return this
-}
+  }
 
 }

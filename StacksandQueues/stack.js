@@ -12,7 +12,8 @@ class Stack {
     this.size = 0;
   }
 
-  //need to be constant time, so these actions happen at beginning of LL rather than the end (think shift/unshift)
+  //need to be constant time, so these actions happen
+  // at beginning of LL rather than the end (think shift/unshift)
   push(val) {
     let newNode = new Node(val);
     if (this.size === 0) {
