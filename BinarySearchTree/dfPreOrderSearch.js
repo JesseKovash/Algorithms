@@ -3,10 +3,10 @@ function dfPreOrderSearch(root) {
   if (!root) return [];
   allNodes.push(root.value)
   if (root.left) {
-    allNodes = allNodes.concat(dfSearch(root.left));
+    allNodes = allNodes.concat(dfPreOrderSearch(root.left));
   }
   if (root.right) {
-    allNodes = allNodes.concat(dfSearch(root.right));
+    allNodes = allNodes.concat(dfPreOrderSearch(root.right));
   }
   return allNodes
 }

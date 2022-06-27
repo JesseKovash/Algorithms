@@ -34,10 +34,10 @@ class PriorityQueue {
   dequeue() {
     if (this.values.length === 0) return;
 
-    const max = this.values[0].priority;
+    const min = this.values[0].priority;
     const end = this.values.pop()
 
-    if (this.values.length === 0) return max
+    if (this.values.length === 0) return min
 
     this.values[0] = end;
     let currIndex = 0;
@@ -66,7 +66,7 @@ class PriorityQueue {
       [this.values[swap], this.values[currIndex]] = [this.values[currIndex], this.values[swap]];
       currIndex = swap;
     }
-    return max
+    return min
   }
 
 }
