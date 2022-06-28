@@ -67,4 +67,23 @@ class Graph {
     return result
   }
 
+  bfSearch(vertex) {
+    const queue = [vertex];
+    const results = [];
+    const visited = {};
+    let curr;
+
+    while (queue.length > 0) {
+      curr = queue.shift();
+      if (!visited[curr]) {
+        results.push(curr);
+        visited[curr] = true;
+        this.adjacencyList[curr].forEach((neighbor) => {
+          if (!visited[neighbor]) queue.push(neighbor)
+        })
+      }
+    }
+    return results
+  }
+
 }
