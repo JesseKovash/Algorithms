@@ -48,4 +48,23 @@ class Graph {
     return result
   }
 
+  dfSearchIterative(vertex) {
+    const stack = [vertex];
+    const result = [];
+    const visited = {};
+    let curr;
+
+    while (stack.length > 0) {
+      curr = stack.pop();
+      if (!visited[curr]) {
+        result.push(curr);
+        visited[curr] = true;
+        this.adjacencyList[curr].forEach((neighbor) => {
+          if (!visited[neighbor]) stack.push(neighbor)
+        });
+      }
+    }
+    return result
+  }
+
 }
