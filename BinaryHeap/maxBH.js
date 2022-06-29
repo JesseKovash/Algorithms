@@ -3,9 +3,8 @@
 //find a node's parent by Math.floor((n-1)/2);
 class MaxBinaryHeap {
   constructor() {
-    values = [];
+    this.values = [];
   }
-
 
   insert(value) {
     this.values.push(value);
